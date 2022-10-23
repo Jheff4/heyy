@@ -15,11 +15,23 @@ const Search = styled('div')(({ theme }) => ({
   width: '40%'
 }));
 
-const Icons = styled(Box) ({
+const Icons = styled(Box)(({ theme }) => ({
+  display: "none",
+  gap: "20px",
+  alignItems: "center",
+  [theme.breakpoints.up("sm")]:{
+    display: "flex"
+  }
+}));
+
+const UserBox = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "20px",
-  alignItems: "center"
-});
+  alignItems: "center",
+  [theme.breakpoints.up("sm")]:{
+    display: "none"
+  }
+}));
 
 const Navbar = () => {
   return (
@@ -37,6 +49,9 @@ const Navbar = () => {
           </Badge>
           <Avatar sx={{width: 30, height: 30}}/>
         </Icons>
+        <UserBox>
+          <Avatar sx={{width: 30, height: 30}}/>
+        </UserBox>
       </StyledToolbar>
     </AppBar>
   )
