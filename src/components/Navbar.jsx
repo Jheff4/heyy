@@ -26,7 +26,7 @@ const Icons = styled(Box)(({ theme }) => ({
 
 const UserBox = styled(Box)(({ theme }) => ({
   display: "flex",
-  gap: "20px",
+  gap: "10px",
   alignItems: "center",
   [theme.breakpoints.up("sm")]:{
     display: "none"
@@ -47,10 +47,11 @@ const Navbar = () => {
           <Badge badgeContent={4} color="error">
             <Notifications />
           </Badge>
-          <Avatar sx={{width: 30, height: 30}}/>
+          <Avatar src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400" sx={{width: 30, height: 30}}/>
         </Icons>
         <UserBox>
-          <Avatar sx={{width: 30, height: 30}}/>
+          <Avatar src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400" sx={{width: 30, height: 30}}/>
+          <Typography>Etinosa</Typography>
         </UserBox>
       </StyledToolbar>
     </AppBar>
