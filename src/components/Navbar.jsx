@@ -1,5 +1,5 @@
-import React from 'react'
-import { AppBar, Toolbar, Typography, Box, InputBase, Badge, Avatar } from '@mui/material'
+import React, { useState } from 'react'
+import { AppBar, Toolbar, Typography, Box, InputBase, Badge, Menu, Avatar, MenuItem } from '@mui/material'
 import { Diversity1, Mail, Notifications } from '@mui/icons-material'
 import { styled } from '@mui/system'
 
@@ -34,6 +34,9 @@ const UserBox = styled(Box)(({ theme }) => ({
 }));
 
 const Navbar = () => {
+
+const [open, setOpen] = useState(false);
+
   return (
     <AppBar position='sticky'>
       <StyledToolbar>
@@ -47,13 +50,32 @@ const Navbar = () => {
           <Badge badgeContent={4} color="error">
             <Notifications />
           </Badge>
-          <Avatar src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400" sx={{width: 30, height: 30}}/>
+          <Avatar src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400" sx={{width: 30, height: 30}} onClick={e => setOpen(true)}/>
         </Icons>
-        <UserBox>
+        <UserBox onClick={e => setOpen(true)}>
           <Avatar src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400" sx={{width: 30, height: 30}}/>
           <Typography>Etinosa</Typography>
         </UserBox>
       </StyledToolbar>
+
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={open}
+        onClose={e => setOpen(false)}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   )
 }
