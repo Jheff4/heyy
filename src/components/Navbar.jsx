@@ -44,10 +44,10 @@ const [open, setOpen] = useState(false);
         <Diversity1 sx= {{ display: {xs: 'block', sm: 'none' }}}/>
         <Search><InputBase placeholder="search"/></Search>
         <Icons>
-          <Badge badgeContent={4} color="error">
+          <Badge badgeContent={5} color="error">
             <Mail />
           </Badge>
-          <Badge badgeContent={4} color="error">
+          <Badge badgeContent={14} color="error">
             <Notifications />
           </Badge>
           <Avatar src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400" sx={{width: 30, height: 30}} onClick={e => setOpen(true)}/>
